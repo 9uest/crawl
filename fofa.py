@@ -31,14 +31,12 @@ def Pyload(urllist):
 			#print "Test %s" %i
 			try:
 				data = urllib2.urlopen(i,timeout=1)
+				print data.getcode()
 				if data.getcode() == 200:
 					print  "[+]%s exist!!" %(i)
 					Existurl.append(i)
-					break
-				else:
-					print "[-]" + i + "   Error CODE = %s" %data.getcode()
 			except:
-				print "[-]" + i + "   Time out"
+				pass
 	print  Existurl
 	print "Test Over"
 	#print existurl
